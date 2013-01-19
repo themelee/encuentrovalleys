@@ -1,0 +1,237 @@
+/*--------------------------------------------------------------------------
+   
+    Eventcamp
+
+    * Css override for mobile viewports
+
+--------------------------------------------------------------------------*/
+
+/* #Tablet (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 768px */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+        /* No specific adjustment for tablet viewports */
+    }
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+    /* Note: Design for a width of 320px */
+
+    @media only screen and (max-width: 767px) {
+        
+        /* Resize section titles and descriptions in the mobile viewports */
+        h2 {
+            font-size: 20px!important;
+            line-height: 30px!important;
+        }
+
+        p.desc {
+            font-size: 13px!important;
+            line-height: 23px!important;
+        }
+
+        /* Remove the alpha background in the top bar */
+        #topbar-inner {
+            background: transparent;
+        }
+
+        /* Style the menu in case user doesn't have javascript */
+        #section-topbar ul#nav {
+            float: right;
+            position: relative;
+            margin-top: 5px;
+        }
+
+        #section-topbar ul#nav > li {
+            display: block;
+            float: left;
+        }
+
+        #section-topbar ul#nav a {
+          display: block;
+          padding: 10px 20px 15px 20px;
+          font: normal 11px/18px 'Open Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          text-decoration: none;
+          text-transform: uppercase;
+          border-top: 3px solid #000;
+        }
+
+            #section-topbar ul#nav a:hover {
+              border-top: 3px solid #fff;
+              text-decoration: none;
+            }
+
+            #section-topbar ul#nav .active a {
+                border-top: 3px solid #fff;
+            }
+
+
+        /* Hide the regular menu and display a select box (javascript in javascripts/jquery.custom.javascripts) */
+        .js #nav { display: none!important; }
+        .js .selectnav { display: block; }
+
+
+        /* Select box (dropdown menu) styling */
+        /* http://www.webinterfacelab.com/snippets/dark-and-light-dropdown-lists */
+        .dropdown {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            height: 28px;
+            width: 200px;
+            background: #111;
+            border: 1px solid #111;
+            -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), 0 1px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown:before, .dropdown:after {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            top: 9px;
+            right: 10px;
+            width: 0;
+            height: 0;
+            border: 4px dashed;
+            border-color: #888 transparent;
+            pointer-events: none;
+        }
+
+        .dropdown:before {
+            border-bottom-style: solid;
+            border-top: none;
+        }
+
+        .dropdown:after {
+            margin-top: 7px;
+            border-top-style: solid;
+            border-bottom: none;
+        }
+
+        .dropdown select {
+            position: relative;
+            width: 130%;
+            margin: 0;
+            padding: 6px 8px 6px 10px;
+            height: 28px;
+            line-height: 14px;
+            font-size: 12px;
+            color: #aaa;
+            text-shadow: 0 1px black;
+            /* Fallback for IE 8 */
+            background: #444;
+            /* "transparent" doesn't work with Opera */
+            background: rgba(0, 0, 0, 0) !important;
+            border: 0;
+            border-radius: 0;
+            -webkit-appearance: none;
+            outline: none;
+        }
+
+        .dropdown select:focus {
+            z-index: 3;
+            width: 100%;
+            color: #ccc;
+            outline: none;
+        }
+
+        .dropdown select > option {
+            margin: 3px;
+            padding: 6px 8px;
+            background: #444;
+            text-shadow: 0 1px rgba(0, 0, 0, 0.4);
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+
+        /* Fix for IE 8 putting the arrows behind the select element. */
+        .lt-ie9 .dropdown {
+            z-index: 1;
+        }
+
+        .lt-ie9 .dropdown select {
+            z-index: -1;
+        }
+
+        .lt-ie9 .dropdown select:focus {
+            z-index: 3;
+        }
+
+        /* Dirty fix for Firefox adding padding where it shouldn't. */
+        @-moz-document url-prefix() {
+            .dropdown select {
+                padding-left: 6px;
+            }
+        }
+
+        /* Adjust the site logo top/bottom margins */
+        #section-event h1 {
+            margin: 90px 0 70px 0;
+        }
+
+        /* Assign bottom margins to the event information boxes */
+        #section-event h2 {
+            margin-bottom: 30px;
+        }
+
+        #section-info #box-date, 
+        #section-info #box-time {
+            margin-bottom: 30px;
+        }
+
+        #section-info #box-location {
+            margin-bottom: 20px;
+        }
+
+        /* Reduce font-sizes in div#section-topic */
+        #section-about p {
+            font-size: 14px;
+            line-height: 26px;
+        }
+
+        /* Remove the gradient background in div#section-speakers */
+        #section-fees {
+            background: #222;
+        }
+
+        #section-news p {
+            font-size: 13px;
+            line-height: 24px;
+        }
+
+        #section-register label.placeholder {
+            display: none;
+        }
+
+        #section-sponsors img {
+            max-width: 60%;
+            margin-bottom: 30px;
+        }
+
+        /* Adjust footer social media menu */
+        #section-footer ul#social {
+            float: none;
+        }
+
+            #section-footer ul#social li a {
+                background: #111;
+                border-right: 1px solid #000;
+            }
+    }
+	
+	
+
+/* #Mobile (Landscape)
+================================================== */
+
+    /* Note: Design for a width of 480px */
+
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    }
